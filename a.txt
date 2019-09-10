@@ -2,3 +2,4 @@ hello
 world
 i am 
 weirongxin
+我是好人
