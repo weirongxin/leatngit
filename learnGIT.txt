@@ -34,6 +34,16 @@ git reset HEAD readme.txt   //撤销暂存区的修改  用HEAD表示是最新�
 ①手动删除readme.txt   git add readme.txt  git commit -m "remove readme.txt "
 ②git rm readme.txt   git commit -m "readme.txt "
 
+5.远程仓库
+--先有本地库，后又远程库 如何关联远程库
+ssh-keygen -t rsa -C "wrx@163.com"  //生成ssh密钥。在用户主目录里.ssh文件夹下生成id_rsa(密钥)和id_rsa.pub(公钥),把公钥进行配置
+git remote add origin git@github.com:weirongxin/leatngit  //在本地leatngit仓库下运行,关联到远程的空仓库。远程仓库的名字是origin
+git push -u origin master  //第一次推送命令。加上-u参数，不但会把master分支的内容推送上去，还会把本地master和远程master关联起来。之后再推送不用加-u
+git push origin master      //之后推送命令。 origin 远程库 master 分支
 
-
+--一般开发最好先创建远程库，然后从远程库克隆
+git clone https://github.com/weirongxin/leatngit.git  //use http
+git clone git@github.com:weirongxin/leatngit.git      //use ssh  ssh协议速度最快
+cd leatngit
+ls   //列出目录下文件夹
 
