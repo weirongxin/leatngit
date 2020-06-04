@@ -1,0 +1,39 @@
+1.安装配置
+git config --global user.name "Wei, Rongxin"
+git config --global user.email "wrx@163.com"
+git config --global --list
+
+mkdir learngit
+cd learngit
+pwd     //查看当前目录路径
+git init  //把当前目录初始化为git管理的目录
+            //git只适合管理文本文件，对于图片，word等二进制文件无法追踪具体变化。
+
+git add readme.txt        //可以反复使用，添加多个文件
+git commit -m "wrote a readme file"   //多次add 一次commit
+
+git status  //查看当前仓库状态
+git diff      //查看所有文件修改内容
+git diff readme.txt   //比较当前文件
+git diff HEAD -- readme.txt    //比较工作区和版本库？？
+git diff --staged //比较？？
+
+git log    //查看提交历史
+git log --pretty=oneline    //查看git 提交日志。以及查看commit id
+
+2.GIT版本管理
+git reset --hard HEAD^   //回退到上一个版本。HEAD指向当前版本的指针。  HEAD^^:回退到上上个版本。HEAD~100:回退到上100个版本。
+git reset --hard 1094a     //回退到指定的commit_id的版本
+git reflog  //查看历史命令。比 git log 查看的更全
+
+3.撤销修改
+git checkout -- readme.txt   //撤销工作区的修改
+git reset HEAD readme.txt   //撤销暂存区的修改  用HEAD表示是最新的版本
+
+4.删除文件
+①手动删除readme.txt   git add readme.txt  git commit -m "remove readme.txt "
+②git rm readme.txt   git commit -m "readme.txt "
+
+
+
+
