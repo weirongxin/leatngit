@@ -35,15 +35,28 @@ git reset HEAD readme.txt   //撤销暂存区的修改  用HEAD表示是最新�
 ②git rm readme.txt   git commit -m "readme.txt "
 
 5.远程仓库
---先有本地库，后又远程库 如何关联远程库
+  //先有本地库，后又远程库 如何关联远程库
 ssh-keygen -t rsa -C "wrx@163.com"  //生成ssh密钥。在用户主目录里.ssh文件夹下生成id_rsa(密钥)和id_rsa.pub(公钥),把公钥进行配置
 git remote add origin git@github.com:weirongxin/leatngit  //在本地leatngit仓库下运行,关联到远程的空仓库。远程仓库的名字是origin
 git push -u origin master  //第一次推送命令。加上-u参数，不但会把master分支的内容推送上去，还会把本地master和远程master关联起来。之后再推送不用加-u
 git push origin master      //之后推送命令。 origin 远程库 master 分支
 
---一般开发最好先创建远程库，然后从远程库克隆
+  //一般开发最好先创建远程库，然后从远程库克隆
 git clone https://github.com/weirongxin/leatngit.git  //use http
-git clone git@github.com:weirongxin/leatngit.git      //use ssh  ssh协议速度最快
+git clone git@github.com:weirongxin/leatngit.git       //use ssh  ssh协议速度最快
 cd leatngit
 ls   //列出目录下文件夹
+
+6.分支管理
+git branch   //查看所有分支，当前分支前面会加上*
+git chekout -b dev   //创建dev分支并切换到dev分支
+git checkout master //切换到master分支
+git merge dev   //合并指定分支到当前分支。   默认使用Fast-forward模式，也就是直接该指针指向
+git merge --no-ff -m "merge branch dev into master" dev   //不使用Fast-forward模式merge需要填写提交信息
+git branch -d dev  //删除分支
+
+  //切换分支git checkout <branch> 和 撤销修改git checkout --<file name> 很迷惑。 所以最新的git提供了git switch切换分支
+git switch -c dev   //创建dev分支并切换到dev分支
+git switch master  //切换到master分支
+
 
