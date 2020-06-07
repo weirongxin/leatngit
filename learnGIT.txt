@@ -59,4 +59,12 @@ git branch -d dev  //删除分支
 git switch -c dev   //创建dev分支并切换到dev分支
 git switch master  //切换到master分支
 
+  //merge 的时候有冲突，解决冲突就是手动把merge的冲突部分进行修改
+git log --graph --pretty=oneline --abbrev-commit  //可以查看到分支合并图
+
+//分支管理策略
+//合并分支时，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。
+//master分支是非常稳定的，仅用来发布新版本，平时不在上面干活。平时干活在dev分支上，只有当某个版本发布时才把dev分支merge到master上。
+git merge --no-ff -m "merge branch dev into master" dev  //--no-ff参数就可以用普通模式进行合并，合并后的历史有分支能看出来曾经做过合并
+
 
