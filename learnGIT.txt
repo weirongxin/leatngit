@@ -73,9 +73,10 @@ git stash    //工作区内容暂存
 //此时再通过 git status 查看工作区，就是干净的，现在就可以创建分支来修复bug
 // 大致流程:git checkout -b issue-101;   修改bug文件;  git add readme.txt; git commit -m "fix bug 101"; git switch master; git merge --no-ff -m "merged bug fix 101" issue-101
 // 现在可以切换回dev分支继续干活了，git switch dev, 通过git status会发现工作区是干净的。
-git stash list  //查看工作现场
+git stash list  //查看工作现场列表
 //工作现场回复方法有2种
-git stash apply   git stash drop   //git stash apply恢复之后stash内容并不删除，需要用git stash drop删除
+git stash apply stach@{0}  //恢复到指定的stash
+git stash apply   git stash drop   //git stash apply恢复之后stash内容并不删除，需要用git stash drop删除。 
 git stash pop  //恢复的同时把stash内容也删除。
 //值得注意的是我们在master上修改了bug分支，但是在我们当前工作的dev分支上当前bug仍然存在
 git cherry-pick 4c805e2  //git专门提供了一个cherry-pick命令，能复制一个特定的提交到当前分支。同时生成一个新的commit。这样就不需要在dev上手动把修复bug的过程再重复一遍
