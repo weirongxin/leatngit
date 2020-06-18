@@ -40,6 +40,7 @@ ssh-keygen -t rsa -C "wrx@163.com"  //生成ssh密钥。在用户主目录里.ss
 git remote add origin git@github.com:weirongxin/leatngit  //在本地leatngit仓库下运行,关联到远程的空仓库。远程仓库的名字是origin
 git push -u origin master  //第一次推送命令。加上-u参数，不但会把master分支的内容推送上去，还会把本地master和远程master关联起来。之后再推送不用加-u
 git push origin master      //之后推送命令。 origin 远程库 master 分支
+git push -f origin master  //强制推送。如果版本比现在的落后，则会覆盖之前的提交信息
 
   //一般开发最好先创建远程库，然后从远程库克隆
 git clone https://github.com/weirongxin/leatngit.git  //use http
