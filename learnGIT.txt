@@ -54,7 +54,7 @@ git chekout -b dev   //创建dev分支并切换到dev分支
 git checkout master //切换到master分支
 git merge dev   //合并指定分支到当前分支。   默认使用Fast-forward模式，也就是直接该指针指向
 git merge --no-ff -m "merge branch dev into master" dev   //不使用Fast-forward模式merge需要填写提交信息
-git branch -d dev  //删除分支
+git branch -d dev  //删除分支    -D参数删除没有被合并过的分支
 
   //切换分支git checkout <branch> 和 撤销修改git checkout --<file name> 很迷惑。 所以最新的git提供了git switch切换分支
 git switch -c dev   //创建dev分支并切换到dev分支
@@ -83,6 +83,47 @@ git stash pop  //恢复的同时把stash内容也删除。
 git cherry-pick 4c805e2  //git专门提供了一个cherry-pick命令，能复制一个特定的提交到当前分支。同时生成一个新的commit。这样就不需要在dev上手动把修复bug的过程再重复一遍
 
 git branch -D feature  //删除没有被merge的分支
+
+git remote      //查看远程库信息
+git remote -v //显示更详细的信息
+git push origin master  //推送信息
+git checkout -b dev origin/dev   //创建远程的dev分支
+git pull  //把当前分支的最新提交从远程抓下来
+git branch --set-upstream-to=origin/dev dev  //如果git pull失败没有指定本地dev和远程dev分支的链接。通过此命令建立链接
+
+git rebase   //可以把本地未push的分叉提交历史整理成直线。目的是使得我们再查看历史提交的变化更容易，因为分叉的提交需要三方对比
+
+7.标签管理
+  //等发布版本时，我们就会打上一个Tag。标签就是版本库的快照，其实就是指向某个commit的指针(和分支很想，但是分支可以移动，标签不能移动)。
+git tag   //查看所有标签。(标签不是按照时间顺序列出的，而是按照字母排序的)
+git tag v1.0   //就可以打一个标签，默认打在HEAD上。
+git tag v0.9 f52c633  //给指定的commit打标签。(如果忘了打标签，现在已经周五了，但应该在周一打的标签没有打，可以用此招)
+git tag -a v0.1 -m "version 0.1 released" 1094abd   //创建带有说明的标签 -a 指定标签名   -m 指定说明文字
+git show v0.1  //可以看到标签的说明
+  //注意：标签总是和commit挂钩，如果这个commit即出现在commit分支，也出现在dev分支。那么在俩个分支上都能看见这个标签
+
+git push origin v0.1     //可以推送一个本地标签到远程
+git push origin --tags  //可以推送全部未推送过的本地标签
+git tag -d v0.1   //可以删除一个本地标签
+git push origin :refs/tags/v0.1  //可以删除一个远程标签
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
