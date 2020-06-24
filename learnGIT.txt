@@ -119,11 +119,25 @@ git remote add github git@github.com:michaelliao/learngit.git  //远程库的名
 git remote add gitee git@gitee.com:liaoxuefeng/learngit.git     //远程库的名字叫做gitee,不叫origin
 git remote -v   //再查看本地远程库的信息
 
+9.自定义Git
+ //忽略特殊文件
+ //当不希望git status 的时候显示的一些编译器生成的特殊后缀的文件时，可以通过编写一个 .gitignore文件，然后把要忽略的文件名填进去。Git就会自动忽略这些文件。
+ //需要再Git工作区的根目录下创建一个特殊的.gitignore文件。GitHub已经为我们准备了各种配置文件，只需要组合一下就可以使用了。所有配置文件可以直接在线浏览：https://github.com/github/gitignore
 
+ //配置别名
+git config --global alias.st status   // 执行git st  就相当于执行 git status
+git config --global alias.co checkout   // 执行git co  就相当于执行 git checkout
+git config --global alias.ci commit   // 执行git ci  就相当于执行 git commit    git ci -m "bla bla bla.."
+git config --global alias.br branch   // 执行git br  就相当于执行 git branch
 
+git config --global alias.unstage 'reset HEAD'   //撤销暂存区的修改(unstage),重新放回工作区。既然是一个unstage操作，就可以配置一个unstage别名
+ //执行 git unstage a.cpp   实际Git执行的是 git reset HEAD a.cpp
 
+git config --global alias.ls 'log -1'  //显示最后一次提交信息  git ls  相当于 git log -1
+//丧心病狂
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
-
+ //[alias]的配置信息在 .gitconfig文件中可以手动修改。
 
 
 
