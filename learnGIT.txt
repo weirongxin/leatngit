@@ -107,9 +107,17 @@ git push origin --tags  //可以推送全部未推送过的本地标签
 git tag -d v0.1   //可以删除一个本地标签
 git push origin :refs/tags/v0.1  //可以删除一个远程标签
 
+8.关联多个远程仓库(gitee 国内的Git托管服务。速度快)
+git remote -v   //先查看本地远程库的信息
+git remote rm origin  //删除已经关联了origin的远程库
+git remote add origin git@gitee.com:liaoxuefeng/learngit.git   //再关联Gitee的远程库
+git remote -v   //再查看本地远程库的信息
 
-
-
+  //同时关联2个远程库
+git remote rm origin  //删除已经关联了origin的远程库
+git remote add github git@github.com:michaelliao/learngit.git  //远程库的名字叫做github,不叫origin
+git remote add gitee git@gitee.com:liaoxuefeng/learngit.git     //远程库的名字叫做gitee,不叫origin
+git remote -v   //再查看本地远程库的信息
 
 
 
