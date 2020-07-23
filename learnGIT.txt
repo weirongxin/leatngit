@@ -15,10 +15,10 @@ git commit -m "wrote a readme file"   //多次add 一次commit
 git status  //查看当前仓库状态
 git diff      //查看所有文件修改内容
 git diff readme.txt   //比较当前文件
-git diff HEAD -- readme.txt    //比较工作区和版本库？？
+git diff HEAD -- readme.txt    //比较工作区和版本库？？(-- 前后都有空格)
 git diff --staged //比较？？
 
-git log    //查看提交历史
+git log    //查看提交历史 (log 太多,按 q 退出)
 git log --pretty=oneline    //查看git 提交日志。以及查看commit id
 
 2.GIT版本管理
