@@ -1,0 +1,15 @@
+win10 创建虚拟桌面：win+ctrl+D。
+虚拟桌面切换： win+ctrl+→ 。  或者  win+tab。 虚拟桌面不需要时：win+ctrl+F4。
+显示桌面：win+M 或 win+D。
+快速访问任务栏的程序：win+1,2,3,4,5,6,7,8,9。  win+T(逐个切换)
+两个应用程序分屏：win+← ， win+→。
+应用切换：ctrl+alt+tab  或者  alt+tab  或者  win+tab。
+程式管理和故障排除：ctrl+shift+ESC。
+文档浏览器：win+E
+放大镜：win+, win-
+捕捉屏幕：win+print screen， win+shift+S。
+打开操作中心：win+A。
+进入设置：win+I。
+与Cortana对话：win+C。
+使用windows游戏栏：win+G。(win+alt+R, win+alt+B)。
+锁屏：win+L。
