@@ -224,6 +224,34 @@
         var arr = ['小明', '小红', '大军', '阿黄'];
         console.log(`欢迎${arr.sort().slice(0,-1)}和${arr.sort().slice(-1)}同学!`);    slice返回的字符串，如果数组元素包括字符则默认加逗号???
         
+   2.5 对象
+        JavaScript的对象是一种无序的集合数据类型，它由若干键值对组成。
+        var xiaoming = {
+          name: '小明',
+          birth: 1990,
+          school: 'No.1 Middle School',
+          weight: 65,
+          score: null
+        };
+        JavaScript用一个{...}表示一个对象，键值对以xxx: xxx形式申明，用,隔开。注意，最后一个键值对不需要在末尾加,，如果加了，有的浏览器（如低版本的IE）将报错。
+        可以通过变量xiaoming来获取小明的属性了：
+        xiaoming.name; // '小明'
+        xiaoming.birth; // 1990
+        访问属性是通过.操作符完成的，但这要求属性名必须是一个有效的变量名。如果属性名包含特殊字符，就必须用''括起来：
+        var xiaohong = {
+          name: '小红',
+          'middle-school': 'No.1 Middle School'
+        };
+        xiaohong的属性名middle-school不是一个有效的变量，就需要用''括起来。访问这个属性也无法使用.操作符，必须用['xxx']来访问：
+        xiaohong['middle-school']; // 'No.1 Middle School'
+        xiaohong['name']; // '小红'
+        xiaohong.name; // '小红'
+        我们在编写JavaScript代码的时候，属性名尽量使用标准的变量名，这样就可以直接通过object.prop的形式访问一个属性了。(写法更简洁)
+        实际上JavaScript对象的所有属性都是字符串，不过属性对应的值可以是任意数据类型。访问不存在的属性不报错，而是返回undefined。
+        由于JavaScript的对象是动态类型，你可以自由地给一个对象添加或删除属性：
+        var xiaoming = {
+          name: '小明'
+        };
         
         
         
@@ -241,6 +269,34 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
