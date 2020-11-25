@@ -1,1 +1,10 @@
 master created
+CopyMemory
+lstrcpy
+memcpy
+sprintf
+strcat
+strcpy
+strncat
+strncpy
+vsprintf
