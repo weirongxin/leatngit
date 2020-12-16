@@ -8,3 +8,4 @@ strcpy
 strncat
 strncpy
 vsprintf
+nAllocSize
